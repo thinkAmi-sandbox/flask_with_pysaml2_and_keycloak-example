@@ -11,3 +11,5 @@
 
 
 ## Related Blog (Written in Japanese)
+
+- [Python + Flask + pysaml2 でSP、KeycloakでIdPを構築し、SAML2 の SP-initiated フローでSAML認証してみた - メモ的な思考的な](https://thinkami.hatenablog.com/entry/2024/02/12/230830)
