@@ -1,0 +1,69 @@
+{% if session['saml_attributes'] %}
+    {% set s = session['saml_attributes'] %}
+
+    <h1>KeyCloak Status</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Name ID</td>
+                <td>{{ s['name_id'] }}</td>
+            </tr>
+            <tr>
+                <td>Name ID Format</td>
+                <td>{{ s['name_id_format'] }}</td>
+            </tr>
+            <tr>
+                <td>Name ID Name Qualifier</td>
+                <td>{{ s['name_id_name_qualifier'] }}</td>
+            </tr>
+            <tr>
+                <td>Name ID SP Name Qualifier</td>
+                <td>{{ s['name_id_sp_name_qualifier'] }}</td>
+            </tr>
+            <tr>
+                <td>Session Index</td>
+                <td>{{ s['session_index'] }}</td>
+            </tr>
+            <tr>
+                <td>Session Expiration</td>
+                <td>{{ s['session_expiration'] }}</td>
+            </tr>
+            <tr>
+                <td>Message ID</td>
+                <td>{{ s['message_id'] }}</td>
+            </tr>
+            <tr>
+                <td>Message Issue Instant</td>
+                <td>{{ s['message_issue_instant'] }}</td>
+            </tr>
+            <tr>
+                <td>Assertion ID</td>
+                <td>{{ s['assertion_id'] }}</td>
+            </tr>
+            <tr>
+                <td>Assertion NotOnOrAfter</td>
+                <td>{{ s['assertion_not_on_or_after'] }}</td>
+            </tr>
+            <tr>
+                <td>Relay Status</td>
+                <td>{{ s['relay_status'] }}</td>
+            </tr>
+            <tr>
+                <td>Identity</td>
+                <td>{{ s['identity'] }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+{% else %}
+    <h1>Login</h1>
+    <ul>
+      <li><a href="/saml/login/keycloak">KeyCloak</a></li>
+    </ul>
+{% endif %}
